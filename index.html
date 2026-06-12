@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日越二拠点生活・資産防衛・事業承継 ライフプラン設計書</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent-emerald: #10b981;
+            --accent-emerald-light: #ecfdf5;
+            --accent-gold: #b45309;
+            --accent-gold-light: #fef3c7;
+            --bg-slate: #f8fafc;
+            --card-bg: #ffffff;
+            --border-slate: #e2e8f0;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --text-dark: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-slate);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ヘッダーデザイン */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            flex-wrap: wrap;
+        }
+
+        .header-meta span strong {
+            color: #ffffff;
+        }
+
+        /* ナビゲーション・タブ */
+        .nav-container {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-slate);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .tab-btn {
+            padding: 1.25rem 1.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background-color: rgba(241, 245, 249, 0.5);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-emerald);
+            border-bottom-color: var(--accent-emerald);
+            font-weight: 600;
+        }
+
+        /* メインコンテンツレイアウト */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* カードデザイン */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-slate);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-emerald);
+            padding-left: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 左右対比グリッド */
+        .side-by-side-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .side-by-side-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .side-card {
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .side-card.japan {
+            background-color: rgba(226, 232, 240, 0.2);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .side-card.vietnam {
+            background-color: rgba(16, 185, 129, 0.03);
+            border-top: 4px solid var(--accent-emerald);
+        }
+
+        .side-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ハイライト表示 */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-card {
+            background-color: var(--bg-slate);
+            border: 1px solid var(--border-slate);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--border-slate);
+        }
+
+        .highlight-card.success::before { background-color: var(--accent-emerald); }
+        .highlight-card.warning::before { background-color: var(--accent-gold); }
+        .highlight-card.primary::before { background-color: var(--primary); }
+
+        .highlight-val {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0.5rem 0;
+        }
+
+        .highlight-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* テーブルデザイン */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+            background-color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-slate);
+        }
+
+        th {
+            background-color: var(--bg-slate);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr.highlight-row {
+            background-color: var(--accent-emerald-light);
+            font-weight: 600;
+        }
+        tr.highlight-row td {
+            color: #065f46;
+        }
+
+        tr.gold-highlight-row {
+            background-color: #fffbeb;
+            font-weight: 600;
+        }
+        tr.gold-highlight-row td {
+            color: #78350f;
+        }
+
+        .currency {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* 資金フローダイアグラム (CSS) */
+        .flow-diagram-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            background-color: var(--bg-slate);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+        }
+
+        .flow-entity {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .flow-entity-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .flow-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .flow-item {
+            background-color: var(--bg-slate);
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--text-light);
+        }
+
+        .flow-item.accent { border-left-color: var(--accent-emerald); }
+        .flow-item.gold { border-left-color: var(--accent-gold); }
+
+        .flow-val {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: var(--accent-emerald);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: -0.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .flow-arrow-text {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            background-color: #ffffff;
+            padding: 0.1rem 0.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-slate);
+        }
+
+        /* 資産積立グラフ */
+        .chart-box {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+            background-color: var(--bg-slate);
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 300px;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--text-light);
+            position: relative;
+        }
+
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+            justify-content: flex-end;
+            margin: 0 0.5rem;
+        }
+
+        .chart-bar {
+            width: 100%;
+            max-width: 60px;
+            background: linear-gradient(to top, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 0; /* JSで上書き */
+            box-shadow: var(--shadow-sm);
+        }
+
+        .chart-bar.invest {
+            background: linear-gradient(to top, #047857 0%, var(--accent-emerald) 100%);
+        }
+
+        .chart-bar-val {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        .chart-label {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        /* アコーディオン */
+        .accordion-item {
+            border: 1px solid var(--border-slate);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background-color: #ffffff;
+            transition: var(--transition);
+        }
+
+        .accordion-item:hover {
+            border-color: var(--text-light);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background-color: #ffffff;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background-color: var(--bg-slate);
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: var(--bg-slate);
+            font-size: 0.9rem;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 1.5rem;
+            max-height: 1000px;
+            border-top-color: var(--border-slate);
+        }
+
+        .accordion-content p {
+            margin-bottom: 1rem;
+        }
+        .accordion-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .evidence-badge {
+            background-color: var(--accent-emerald-light);
+            color: #065f46;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* タイムライン */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-slate);
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 9999px;
+            background-color: #ffffff;
+            border: 3px solid var(--accent-emerald);
+            z-index: 2;
+        }
+
+        .timeline-step.active::before {
+            background-color: var(--accent-emerald);
+            box-shadow: 0 0 0 4px var(--accent-emerald-light);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-emerald);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .timeline-list {
+            margin-top: 0.5rem;
+            padding-left: 1.25rem;
+            font-size: 0.85rem;
+        }
+        
+        .timeline-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* アラート */
+        .alert-box {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        /* 印刷調整 */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .nav-container, .tab-btn {
+                display: none !important;
+            }
+            .tab-content {
+                display: block !important;
+                page-break-after: always;
+            }
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #000000 !important;
+                page-break-inside: avoid;
+            }
+            header {
+                background: none !important;
+                color: #000000 !important;
+                border-bottom: 2px solid #000000;
+                padding: 1rem 0;
+            }
+            h1 { color: #000000 !important; }
+            .header-meta span { color: #333333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <span class="tag">PROPOSAL</span>
+            <h1>日越二拠点生活・資産防衛・事業承継 ライフプラン設計書</h1>
+            <div class="header-meta">
+                <span>計画モデル: <strong>夫婦役員報酬 各月20万円（合計40万円）プラン</strong></span>
+                <span>対象: <strong>経営者ファミリー（夫35歳・妻34歳・子0歳）</strong></span>
+                <span>作成者: <strong>ファイナンシャルプランニング共同設計チーム</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- タブナビゲーション -->
+    <div class="nav-container">
+        <ul class="nav-tabs" id="navTabs">
+            <li><button class="tab-btn active" data-tab="summary">全体概要</button></li>
+            <li><button class="tab-btn" data-tab="japan-side">【日本側】プラン</button></li>
+            <li><button class="tab-btn" data-tab="vietnam-side">【ベトナム側】プラン</button></li>
+            <li><button class="tab-btn" data-tab="legal">法的一貫性 & 税務</button></li>
+            <li><button class="tab-btn" data-tab="timeline">実行タイムライン</button></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- ==================== 全体概要 ==================== -->
+        <div id="summary" class="tab-content active">
+            <div class="card">
+                <h2 class="card-title">ライフプランの基本コンセプト</h2>
+                <p style="margin-bottom: 1.25rem;">
+                    本計画書は、経営者ご夫婦の最大の願いである**「60歳までに所有と経営を分離する（日本法人は雇われ社長に承継し、株式によるオーナーシップは維持）」**と、**「ベトナム（ダナン）と日本の二拠点での豊かな生活」**を、国際税務上および法的に100%安全（完全ホワイト）なスキームで実現するための総合設計書です。
+                </p>
+
+                <!-- 計画の保守性について -->
+                <div style="background-color: #fef3c7; border-left: 4px solid #d97706; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.88rem; color: #92400e; line-height: 1.6;">
+                    <strong>💡 本計画の保守性（安全マージン・上振れ余地）について</strong><br>
+                    本シミュレーションは、現在の「倉庫賃貸不動産収入」および「低単価・低利益水準のソフトウェアテスト事業」の売上・収益力をベースに作成されています。実際には、今後の事業展開や単価改定により、両事業ともさらなる売上・利益の伸長が予定されていますが、計画書の確実性を高めるため、あえて成長による増益要因を一切織り込まない<strong>「極めて保守的（甘く見積もった）な最低ラインの数値」</strong>で設計しています。そのため、実際の60歳時点のキャッシュおよび総資産は、本計画よりも上振れる可能性が非常に高い設計となっています。
+                </div>
+
+                <!-- ビジュアルフローセクション -->
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.2rem; margin: 2rem 0; background-color: var(--bg-slate); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-slate); align-items: center;">
+                    <div style="text-align: center;">
+                        <img src="dual_residency_lifestyle.png" alt="日越二拠点ライフプラン＆資金還流イメージ" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: var(--shadow-md); display: block; margin: 0 auto;">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--accent-emerald); padding-bottom: 0.5rem;">
+                            【計画全体像】日本で「守り」、ベトナムで「攻め・生活」を創る還流モデル
+                        </h3>
+                        <ol style="font-size: 0.88rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; line-height: 1.5;">
+                            <li><strong>① 日本で資産を守る・溜める</strong>：既存事業の建物を法人へ移管し、地代で個人の日本の口座を維持。小規模共済・生命保険等で国内の安全資産を強固に構築。</li>
+                            <li><strong>② 毎年700万円をクリーンに還流</strong>：日本法人からベトナム法人へ「ITテスト・開発外注費」として送金。PEリスク等の税務リスクを完全排除。</li>
+                            <li><strong>③ 夫婦合計40万円の役員報酬を受給</strong>：低税率なベトナムで夫20万・妻20万を受給。家賃（月10万）と夫の医療費は法人の「社宅・福利厚生」で全額経費決済。</li>
+                            <li><strong>④ 豊かな生活と5%複利投資の両立</strong>：世帯手取り40万のうち、月20万円を個人投資信託（5%複利）へ積立。残り月20万円で贅沢なダナン現地生活を満喫。</li>
+                            <li><strong>⑤ 共済金を活かした還流ループ</strong>：4年毎にセーフティ共済（800万）を解約し、ベトナム送金400万＋日本消費400万で経費相殺。再加入して繰り返し積立を行う。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin: 2.5rem 0 1rem 0; text-align: center;">本計画によって得られる具体的なライフプラン効果</h3>
+                <div class="highlight-grid">
+                    <div class="highlight-card success">
+                        <div class="highlight-label">60歳までの税金・社会保険削減コスト</div>
+                        <div class="highlight-val">約4,520万円</div>
+                        <p class="highlight-label">36歳〜60歳までの住民票転出による削減メリット累計</p>
+                    </div>
+                    <div class="highlight-card primary">
+                        <div class="highlight-label">60歳時点での予想総資産（世帯合計）</div>
+                        <div class="highlight-val">約2億7,390万円</div>
+                        <p class="highlight-label">個人投資1.06億 ＋ 不動産1億 ＋ 日本側3,510万 ＋ 越法人3,200万</p>
+                    </div>
+                    <div class="highlight-card warning">
+                        <div class="highlight-label">60歳までの生活費削減コスト</div>
+                        <div class="highlight-val">約1億8,720万円</div>
+                        <p class="highlight-label">日越の物価・人件費差による生活費の差額累計（年約780万×24年）</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 日本側とベトナム側の対比カード -->
+            <div class="side-by-side-grid">
+                <!-- 日本側 -->
+                <div class="side-card japan">
+                    <div class="side-card-title">
+                        <span>【日本側】の役割・お金の流れ</span>
+                        <span style="font-size: 0.8rem; background-color: var(--accent-gold); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px;">守りと還流</span>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                        日本法人の資産を維持しつつ、安全にベトナムと日本の個人口座に資金を還流させます。
+                    </p>
+                    <ul style="font-size: 0.85rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><strong>倉庫建物の法人移管</strong>：土地は個人に残し、法人から地代（年105万）を個人に支払う。</li>
+                        <li><strong>個人口座の維持</strong>：地代収入から固定資産税（30万）と個人生命保険（ジブラルタ72万）を支払い、日本の口座を自動で維持・蓄積。</li>
+                        <li><strong>法人内の安全積立</strong>：経営セーフティ共済（年188万・上限800万）と法人生命保険（年36万）で簿外プールを構築。</li>
+                        <li><strong>日越往復航空券の経費化</strong>：航空券代は日本法人の「出張旅費」として損金処理。</li>
+                    </ul>
+                </div>
+
+                <!-- ベトナム側 -->
+                <div class="side-card vietnam">
+                    <div class="side-card-title">
+                        <span>【ベトナム側】の役割・お金の流れ</span>
+                        <span style="font-size: 0.8rem; background-color: var(--accent-emerald); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px;">攻めと生活</span>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                        日本から送られた資金を受け取り、税効率の最大化と、現地でのゆとりある生活、将来積立を行います。
+                    </p>
+                    <ul style="font-size: 0.85rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><strong>日本からの外注送金</strong>：日本法人からベトナム法人へ年700万円を開発外注費として送金。</li>
+                        <li><strong>夫婦役員報酬の受給</strong>：夫・妻それぞれ月20万円（合計40万/年480万）を受給。現地所得税は実効約5.7%と低率。</li>
+                        <li><strong>経費での社宅決済</strong>：高級コンドミニアム家賃（年120万・光熱費込）をベトナム法人の「社宅経費」で全額決済。</li>
+                        <li><strong>ゆとりバランス積立</strong>：世帯月40万のうち、月20万円を年利5%の投資信託で積立（60歳で約1億680万）。残り月20万円を贅沢な現地生活費へ。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 日本側プラン ==================== -->
+        <div id="japan-side" class="tab-content">
+            <div class="card">
+                <h2 class="card-title">【日本側】の収支・経費・国内積立シミュレーション</h2>
+                <p style="margin-bottom: 1.5rem;">
+                    日本国内での課税・社会保険料を極限まで低く抑えつつ、法人資産と個人の口座を強固に守る設計です。
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>エンティティ</th>
+                                <th>項目</th>
+                                <th>金額 (年額)</th>
+                                <th>詳細・FP向け税務上の位置づけ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 日本法人 -->
+                            <tr>
+                                <td rowspan="5" style="font-weight: 600; background-color: rgba(226, 232, 240, 0.2);">日本法人<br>(売上: 1,458万)</td>
+                                <td>売上合計</td>
+                                <td class="currency">1,458万円</td>
+                                <td>ソフトウェアテスト（684万円）＋ 倉庫賃貸（774万円）</td>
+                            </tr>
+                            <tr>
+                                <td>承継役員人件費</td>
+                                <td class="currency">309万円</td>
+                                <td>新社長（元従業員）の役員報酬 ＋ 法人負担社会保険料</td>
+                            </tr>
+                            <tr>
+                                <td>共済・保険積立</td>
+                                <td class="currency">224万円</td>
+                                <td>経営セーフティ共済（年188万 ★4年ローテーション積立） ＋ 法人生命保険（年36万）</td>
+                            </tr>
+                            <tr>
+                                <td>他社・個人送金</td>
+                                <td class="currency">805万円</td>
+                                <td>ベトナム法人外注費（700万） ＋ 夫土地使用地代支払（105万）</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>法人手残り(税引前)</td>
+                                <td class="currency">109万円</td>
+                                <td>➔ 共済（188万）を積みつつ、毎年109万円の現預金が法人内に蓄積。</td>
+                            </tr>
+                            
+                            <!-- 夫個人口座 -->
+                            <tr>
+                                <td rowspan="3" style="font-weight: 600; background-color: rgba(254, 243, 199, 0.3);">夫個人口座<br>(日本側)</td>
+                                <td>地代収入</td>
+                                <td class="currency">105万円</td>
+                                <td>日本法人からの土地使用料（月8.75万円） ➔ 日本の個人口座に直接還流</td>
+                            </tr>
+                            <tr>
+                                <td>固定資産税</td>
+                                <td class="currency">▲30万円</td>
+                                <td>土地にかかる固定資産税（経費・概算）</td>
+                            </tr>
+                            <tr>
+                                <td>生命保険料支出</td>
+                                <td class="currency">▲72万円</td>
+                                <td>ジブラルタ個人生命保険（月6万円） ➔ 地代収入で自動引き落としを完遂</td>
+                            </tr>
+                            <tr class="gold-highlight-row">
+                                <td>個人手残り</td>
+                                <td class="currency">+3万円</td>
+                                <td>➔ 役員報酬0でも日本の個人口座は黒字を維持し、枯渇を防ぐ。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background-color: var(--bg-slate); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-slate); font-size: 0.85rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 700;">🛫 二拠点往復航空券の日本法人経費化</p>
+                        <p style="color: var(--text-light); line-height: 1.5;">
+                            日本とベトナムを往復する航空券代や現地出張費は、日本法人の「現地開発ディレクション出張」として旅費交通費（損金）で処理し、個人の生活費を圧迫しない設計とします。
+                        </p>
+                    </div>
+                    <div style="background-color: var(--bg-slate); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-slate); font-size: 0.85rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 700;">🔄 経営セーフティ共済の4年サイクルローテーション</p>
+                        <p style="color: var(--text-light); line-height: 1.5;">
+                            年188万円を積み立て、4.25年で上限800万円に達したら一時解約。解約手当金800万円（益金）の相殺として「ベトナムへの開発外注費追加送金400万円」＋「日本側消費（新社長賞与・社用車購入等）400万円」を同時に経費計上（損金相殺）して税負担をゼロにし、解約後すぐに再加入して積立を継続します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 日本側での積立資産 -->
+            <div class="card">
+                <h2 class="card-title">【日本側】で積み上がる将来の安全資産（60歳時点予測）</h2>
+                <div class="highlight-grid">
+                    <div class="highlight-card warning">
+                        <div class="highlight-label">経営セーフティ共済 (積立残高)</div>
+                        <div class="highlight-val">約510万円</div>
+                        <p class="highlight-label">解約・再加入を5回繰り返し、6回目の積立途中</p>
+                    </div>
+                    <div class="highlight-card warning">
+                        <div class="highlight-label">法人生命保険 (返戻金)</div>
+                        <div class="highlight-val">約800万円</div>
+                        <p class="highlight-label">年36万円払込 × 24年（払込総額864万）</p>
+                    </div>
+                    <div class="highlight-card warning">
+                        <div class="highlight-label">個人生命保険 (ジブラルタ)</div>
+                        <div class="highlight-val">約2,200万円</div>
+                        <p class="highlight-label">年72万円払込 × 24年（65歳払込満了時）</p>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 1rem;">
+                    ➔ 日本側だけで、60歳時点で**合計約3,510万円**の安全資産を確保。さらに、地代還流の源泉である**日本国内の所有不動産（土地等：評価額約1億円）**を維持。これとは別に、共済解約金から累計**2,000万円**が国内で消費（社用車購入や従業員還元）に充てられています。
+                </p>
+            </div>
+        </div>
+
+        <!-- ==================== ベトナム側プラン ==================== -->
+        <div id="vietnam-side" class="tab-content">
+            <div class="card">
+                <h2 class="card-title">【ベトナム側】の収支・生活費・個人積立シミュレーション</h2>
+                <p style="margin-bottom: 1.5rem;">
+                    日本からの開発外注費送金を原資として、現地でのゆとりある生活費の確保と、5%の積立投資を両立させます。
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>エンティティ</th>
+                                <th>項目</th>
+                                <th>金額 (年額)</th>
+                                <th>詳細・現地での生活実態</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ベトナム法人 -->
+                            <tr>
+                                <td rowspan="5" style="font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">ベトナム法人<br>(売上: 700万)</td>
+                                <td>売上（日本からの送金受入）</td>
+                                <td class="currency">700万円</td>
+                                <td>日本法人からのシステムテスト・開発外注費（約11.6億VND）</td>
+                            </tr>
+                            <tr>
+                                <td>夫婦役員報酬（合計）</td>
+                                <td class="currency">480万円</td>
+                                <td>夫報酬240万（月20万）＋ 妻報酬240万（月20万）/ 所得税PIT実効約5.7%</td>
+                            </tr>
+                            <tr>
+                                <td>コンドミニアム社宅家賃</td>
+                                <td class="currency">120万円</td>
+                                <td>高級社宅家賃（月10万・光熱費込）。法人経費として損金決済。</td>
+                            </tr>
+                            <tr>
+                                <td>維持費・医療保険</td>
+                                <td class="currency">50万円</td>
+                                <td>夫医療保険（年20万・福利厚生費） ＋ 会計税理士・維持費（年30万）</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>現地法人手残り利益</td>
+                                <td class="currency">50万円</td>
+                                <td>➔ 経常利益として毎年50万蓄積。さらに共済解約時に臨時外注費として計400万×5回（累計2,000万）が送金還流されます。</td>
+                            </tr>
+
+                            <!-- 個人の手取り・積立・生活費 -->
+                            <tr>
+                                <td rowspan="3" style="font-weight: 600; background-color: var(--accent-emerald-light);">個人マネー<br>(夫婦合計月40万)</td>
+                                <td>世帯手取り総額</td>
+                                <td class="currency">480万円</td>
+                                <td>夫報酬月20万 ＋ 妻報酬月20万</td>
+                            </tr>
+                            <tr style="font-weight: 700; color: var(--accent-emerald);">
+                                <td>個人証券口座積立額</td>
+                                <td class="currency">▲240万円</td>
+                                <td>**月20万円を個人積立に回す** ➔ 年利5.0%で複利運用</td>
+                            </tr>
+                            <tr style="font-weight: 700; color: var(--text-dark);">
+                                <td>自由に使える現地生活費</td>
+                                <td class="currency">240万円</td>
+                                <td>**月20万円を生活費・お小遣いとする** ➔ 家賃・医療費は別枠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ダナンでの生活費の現実 -->
+                <div style="background-color: var(--accent-emerald-light); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.9rem; margin-bottom: 2rem;">
+                    <h4 style="font-weight:700; color:#065f46; margin-bottom:0.5rem;">🇻🇳 ダナン現地での生活レベルと物価差による削減効果（2026年基準）</h4>
+                    <p style="color: #065f46; line-height: 1.6;">
+                        *   **生活コストの劇的な適正化**: ダナンで「高級コンドミニアム社宅（月10万・光熱費込）」に住み、「フルタイムシッター（月3〜5万）を雇用」し、「純生活費・レジャーに月20万」を使う贅沢な暮らし（合計月30万円）は、日本（東京・名古屋）で同水準の生活（ジム・プール付高級マンション家賃35万 ＋ フルタイムシッター25万 ＋ 贅沢な生活費35万 ＝ 合計月95万円）をした場合と比較して、**毎月約65万円（年間約780万円）の生活費削減**になります。<br>
+                        *   **24年間の累計削減メリット**: 物価・人件費の差だけで、60歳までの24年間で**約1億8,720万円**相当の生活コストを自動的に削減していることになり、これが将来の1.7億円超の資産形成を支える最大の原資（エンジン）となっています。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ベトナム側積立グラフ（利回り5%） -->
+            <div class="card">
+                <h2 class="card-title">【ベトナム側】で積み上がる将来の資産（投資・法人資産）</h2>
+                <div class="chart-box">
+                    <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 1rem; text-align: center;">
+                        個人投資信託（月20万円 / 年利5.0%複利）の積立推移シミュレーション
+                    </h4>
+                    <div class="chart-container">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar invest" id="bar5" style="height: 12.3%;">
+                                <span class="chart-bar-val">1,320万円</span>
+                            </div>
+                            <span class="chart-label">5年目</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar invest" id="bar10" style="height: 28.0%;">
+                                <span class="chart-bar-val">3,000万円</span>
+                            </div>
+                            <span class="chart-label">10年目</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar invest" id="bar15" style="height: 48.3%;">
+                                <span class="chart-bar-val">5,165万円</span>
+                            </div>
+                            <span class="chart-label">15年目</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar invest" id="bar20" style="height: 74.2%;">
+                                <span class="chart-bar-val">7,930万円</span>
+                            </div>
+                            <span class="chart-label">20年目</span>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar invest" id="bar24" style="height: 100%;">
+                                <span class="chart-bar-val" style="font-size: 0.9rem; color: #065f46;">1億680万円</span>
+                            </div>
+                            <span class="chart-label">24年目 (60歳)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ベトナム法人側資産プールカード -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background-color: var(--accent-emerald-light); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 700; color: #065f46;">📈 個人証券口座 (5%複利運用)</p>
+                        <p style="color: #065f46; line-height: 1.5;">
+                            個人役員報酬からの積立（月20万円）を年利5.0%で24年運用し、60歳時点で**1億680万円**を形成します。
+                        </p>
+                    </div>
+                    <div style="background-color: var(--accent-emerald-light); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 700; color: #065f46;">🏢 ベトナム法人内プール (不動産取得・事業投資原資)</p>
+                        <p style="color: #065f46; line-height: 1.5;">
+                            毎年の法人経常利益蓄積（累計1,200万円） ＋ 日本の共済解約金からの臨時送金（累計2,000万円）を合算し、60歳時点で**合計3,200万円**の法人資産を確保。現地での不動産（土地）取得の原資とします。
+                        </p>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 1.5rem;">
+                    ➔ ベトナム個人投資（1億680万） ＋ 日本側不動産（1億） ＋ 日本側安全資産（3,510万） ＋ ベトナム法人資産（3,200万）により、<br>
+                    60歳時点で**世帯総資産は約2億7,390万円**規模（＋日本での還流消費2,000万円）に達します。
+                </p>
+            </div>
+        </div>
+
+        <!-- ==================== 法的一貫性 & 税務 ==================== -->
+        <div id="legal" class="tab-content">
+            <div class="card">
+                <h2 class="card-title">FP向け法的一貫性（エビデンス）とリスク対策</h2>
+                <p style="margin-bottom: 1.5rem;">
+                    日越間の二国間税務および現地法制において、100%ホワイトかつ安全なエビデンスを元にした解説です。
+                </p>
+
+                <!-- アコーディオン -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>1. 夫婦および従業員の滞在・就労ビザの適正性</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">ベトナム出入国管理局・労働局ルール</span>
+                        <p><strong>【夫の滞在資格】配偶者TRC（一時滞在カード・最長3年更新）</strong></p>
+                        <p>奥様がベトナム人であるため、ビザ取得のための資金拘束（出資金）は不要です。ベトナム人配偶者を持つ外国人は、労働局への事前通知手続きを行うことで、**労働許可証（Work Permit）の取得が免除**されます。ベトナム法人から役員報酬を受け取ること、社宅の経費決済をすることは完全に合法です。</p>
+                        <p><strong>【従業員の滞在資格】労働許可証（Manager）＋労働TRC（2年）</strong></p>
+                        <p>将来社長を継いでもらう予定の従業員（日本人）は、出資金30億VND未満の投資家ビザ（DT4ビザ）での滞在では労働許可証の免除対象外（＝実質不法就労リスク）となります。そのため、ベトナム法人で雇用契約を結び、「管理職（Manager）」枠として労働許可証を取得し、労働TRCで滞在させることが最も安全かつ法的にホワイトなルートです。</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>2. 日本居住者・非居住者判定（183日ルール）のクリア</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">日本国・税法第3条 ＆ 日越租税条約第4条</span>
+                        <p>夫は日本居住者（183日）を維持せず、住民票を転出して**「日本非居住者（ベトナム居住者）」**として正式に生活の本拠をダナンに置きます。日本の社会保険料（健康保険・厚生年金）が免除され、年金・保険料の負担は完全に0円となります。</p>
+                        <p><strong>【PE（恒久的施設）リスクの回避】</strong></p>
+                        <p>非居住者である夫が日本法人の意思決定をベトナム現地で行い、日本法人がベトナム法人に外注送金をする場合、日本税務署から「ベトナム法人が日本法人の実質的なPE（事業所）である」と認定されるリスクがあります。これを避けるため、「ITテスト・アプリ開発の実質的な実務開発」をベトナム法人が本当に行っているという実態（成果物、コードのログ、新社長との定期的な業務委託契約）を整備してPE課税を100%防ぎます。</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>3. 新規ローカル法人設立と不動産・IT税制優遇の最適化</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">ベトナム土地法 (Land Law 2024) ＆ 法人税法 (CIT)</span>
+                        <p><strong>【不動産の取得】</strong></p>
+                        <p>外国人が1%でも出資している外資系法人は、ベトナム国内の土地使用権（LUR）を市場から直接購入することができません。奥様（ベトナム人）が100%出資するローカル企業を設立することで、**ベトナム国内のすべての一般土地使用権（LUR）の市場での直接購入・所有**が可能になります。</p>
+                        <p><strong>【IT税制優遇（4年免税・9年半減）と区分経理の回避】</strong></p>
+                        <p>1つの法人でIT事業と一般事業（不動産賃貸等）を併業する場合、IT利益のみに優遇を適用するための「区分経理（別会計）」が必要となり、共通経費（オフィス家賃や役員報酬など）の按分比率を巡って税務調査で否認されるリスクが生じます。これに対し、奥様名義のローカル法人は維持・設立コストが安いため、**「ITテスト・開発専業会社（100%優遇享受）」と「不動産・その他ビジネス用会社（20%標準課税）」の複数法人を完全に切り分けて設立・運営**します。</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>4. 地代還流時の「借地権認定課税」のリスク対策</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">日本国・法人税法施行令第137条</span>
+                        <p>日本法人の倉庫・工場（建物）を法人へ移管し、土地は夫個人に残したままで法人から夫に地代（年105万）を支払う際、税務署から「借地権の贈与（みなし贈与）」があったとして高額な課税を受けるリスクがあります。</p>
+                        <p>これを回避するため、建物移管のタイミングで、日本法人と夫個人の共同名義で所轄 of 税務署へ**「土地の無償返還に関する届出書」**を提出します。これにより、将来土地を貸借関係の終了後に無償で返還することを誓約し、借地権課税を完全に無効化します。</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>5. iDeCo（確定拠出年金）および小規模企業共済への非加入の判断</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">税務上の合理性判断</span>
+                        <p><strong>【結論：今後も加入（開始）しない】</strong></p>
+                        <p>iDeCoおよび小規模企業共済は現在未加入（スタート前）状態です。日本の非居住者（ベトナム居住者）になると、日本国内での課税所得が地代収入（不動産所得）のみとなり、所得税・住民税が極めて低くなります。そのため、これらの制度の最大のメリットである**「掛金の全額所得控除による節税効果」がほぼ機能しません。**</p>
+                        <p>また、非居住者化に伴う口座維持の手続きコストや、60歳以降の受取時の税制（退職所得控除等）の複雑さを考慮すると、日本国内でこれらの積立を新規に開始する必要性は一切ありません。制度を利用しない代わりに、浮いたキャッシュは全額、自由度の高い海外個人投資口座（年利5.0%運用目標）へ回し、機動的に運用する方針とします。</p>
+                    </div>
+                </div>
+
+                <!-- 医療の2層防衛ライン (エビデンス) -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>6. 医療の2層防衛ライン（病気リスク対策）</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <span class="evidence-badge">日本国・住民基本台帳法第30条の46</span>
+                        <p><strong>【第1層（現地）】グローバル民間医療保険</strong></p>
+                        <p>夫は年間約20万円のグローバル保険に加入し、ベトナムの高級国際病院（Family Medical Practice, Vinmec等）でキャッシュレス（窓口負担0円）受診します。ベトナム籍の妻と子は現地の公的/ローカル保険で対応します。</p>
+                        <p><strong>【第2層（日本帰国時）】国民健康保険の即日復活</strong></p>
+                        <p>難病や手術が必要になった場合は一時帰国し、実家に住民票を戻す（転入届）を行うことで、日本国籍者は**即日で日本の国民健康保険に再加入可能**です。3割負担および高額療養費制度を利用して最先端治療を受けられます。治療後は再度、海外転出届を出せば完了です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 実行タイムライン ==================== -->
+        <div id="timeline" class="tab-content">
+            <div class="card">
+                <h2 class="card-title">二拠点生活・事業承継 実行タイムライン</h2>
+                <p style="margin-bottom: 2rem;">
+                    グレーゾーンを一切排除し、順を追って進める3ヵ年実行スケジュールです。
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-step active">
+                        <div class="timeline-date">Phase 0 (現在 〜 2027年6月)</div>
+                        <div class="timeline-title">永住権・移転準備 ＆ 既存会社の整理</div>
+                        <div class="timeline-desc">
+                            <strong>【最優先タスク】</strong>
+                            <ul class="timeline-list">
+                                <li>**妻の日本永住権（PR）獲得**: 永住権審査中は年間300日以上の日本滞在が必須なため、ベトナムへの「フライング移住」は厳禁。</li>
+                                <li>**既存の共同出資法人の整理**: 月2万の維持費を削減するため、株式譲渡で籍を抜くか、清算・廃業を進めます。</li>
+                                <li>**日本法人の倉庫・工場（建物）の移管準備**: 税理士との譲渡価額の合意と評価の精査。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="timeline-date">Phase 1 (2027年6月 〜 2027年9月)</div>
+                        <div class="timeline-title">建物の法人移管 ＆ 地代還流の開始</div>
+                        <div class="timeline-desc">
+                            <strong>【最優先タスク】</strong>
+                            <ul class="timeline-list">
+                                <li>**倉庫の日本法人への譲渡実行**: 建物の登記変更。</li>
+                                <li>**土地無償返還届出書の提出**: 借地権の認定課税を避けるため、税務署へ即時提出。</li>
+                                <li>**地代の支払い開始**: 法人から個人の日本の口座へ地代（月8.75万）を支払い、ジブラルタ保険料の自動引き落とし体制を整備。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="timeline-date">Phase 2 (2027年9月 〜 2028年3月)</div>
+                        <div class="timeline-title">ベトナム法人設立 ＆ 移住手続き</div>
+                        <div class="timeline-desc">
+                            <strong>【最優先タスク】</strong>
+                            <ul class="timeline-list">
+                                <li>**ベトナム新規ローカル法人（奥様100%）設立**: IT専業会社と不動産等の会社の複数設立。</li>
+                                <li>**夫の配偶者TRC取得**: 最長3年の滞在カード、および労働許可証免除手続き。</li>
+                                <li>**日本での転出届（住民票抜き）**: 日本非居住者化による社会保険料免除。</li>
+                                <li>**日本の不動産地代に対する確定申告のための「納税管理人（親族等）」の指定**（※iDeCoや小規模企業共済は非居住者化に伴う所得控除メリット消失のため、今後も新規加入・積立は行いません）。</li>
+                                <li>**従業員（役員予定）のビザ取得**: 労働許可証（Manager）および労働TRC（2年）の取得。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert-box">
+                    <div class="alert-title">⚠️ 重大注意点（フライング移住の禁止）</div>
+                    <p>奥様の永住権（PR）取得審査は入管が厳しく出入国日数をチェックします。日本滞在が年間300日を下回ると居住実態のリセット（＝審査不許可）となります。フェーズ2への移行は、必ず「永住許可が下りた後」に実施してください。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // タブ切り替えロジック
+        document.getElementById('navTabs').addEventListener('click', function(e) {
+            const btn = e.target.closest('.tab-btn');
+            if (!btn) return;
+
+            // タブボタンの切り替え
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // コンテンツの切り替え
+            const tabId = btn.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            // タブを切り替えたら、スクロールトップまたはアニメーションのトリガー
+            window.scrollTo({ top: document.querySelector('.nav-container').offsetTop, behavior: 'smooth' });
+        });
+
+        // アコーディオン開閉ロジック
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // 読み込み時にグラフアニメーション（高さをセットする）
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('bar5').style.height = '12.3%';
+                document.getElementById('bar10').style.height = '28.0%';
+                document.getElementById('bar15').style.height = '48.3%';
+                document.getElementById('bar20').style.height = '74.2%';
+                document.getElementById('bar24').style.height = '100%';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
