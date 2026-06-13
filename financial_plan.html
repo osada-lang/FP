@@ -702,6 +702,7 @@
             <li><button class="tab-btn active" data-tab="summary">全体概要</button></li>
             <li><button class="tab-btn" data-tab="japan-side">【日本側】プラン</button></li>
             <li><button class="tab-btn" data-tab="vietnam-side">【ベトナム側】プラン</button></li>
+            <li><button class="tab-btn" data-tab="successor">継承役員候補</button></li>
             <li><button class="tab-btn" data-tab="legal">法的一貫性 & 税務</button></li>
             <li><button class="tab-btn" data-tab="timeline">実行タイムライン</button></li>
         </ul>
@@ -826,7 +827,7 @@
                                 <td>ソフトウェアテスト（684万円）＋ 倉庫賃貸（774万円）</td>
                             </tr>
                             <tr>
-                                <td>承継役員人件費</td>
+                                <td><a href="javascript:void(0)" onclick="openSuccessorTab()" style="color: #047857; font-weight: 600; text-decoration: underline; cursor: pointer;">継承役員人件費 (詳細へ)</a></td>
                                 <td class="currency">309万円</td>
                                 <td>新社長（元従業員）の役員報酬 ＋ 法人負担社会保険料</td>
                             </tr>
@@ -1163,6 +1164,60 @@
             </div>
         </div>
 
+        <!-- ==================== 継承役員候補 ==================== -->
+        <div id="successor" class="tab-content">
+            <div class="card">
+                <h2 class="card-title">新社長（元従業員）の給料・ビザ・キャリアロードマップ</h2>
+                <p style="margin-bottom: 1.5rem;">
+                    将来的に日本法人の代表権を引き継ぐ予定の従業員（日本人）に対する、適正な給与体系および日本・ベトナム両国での合法的な在留・就労スキームの詳細です。
+                </p>
+
+                <div class="side-by-side-grid">
+                    <!-- 給料・人件費内訳 -->
+                    <div class="side-card japan">
+                        <div class="side-card-title">
+                            <span>給料・人件費の内訳（年額309万円）</span>
+                            <span style="font-size: 0.8rem; background-color: var(--accent-gold); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px;">日本法人支給</span>
+                        </div>
+                        <ul style="font-size: 0.85rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; line-height: 1.6;">
+                            <li><strong>役員報酬支給額</strong>：年270万円（月額22.5万円）</li>
+                            <li><strong>法定福利費（社会保険料・会社負担分）</strong>：年約39万円</li>
+                            <li><strong>合計経費（日本法人）</strong>：年309万円（月約25.7万円）</li>
+                            <li><strong>実務上の位置づけ</strong>：
+                                日本法人の役員として登記され、実務上の管理・日本側のオペレーションを担当します。非居住者となるため、日本側の社会保険の取り扱いや、将来的な税務調査に対して「役員報酬の妥当性（実態としての業務遂行）」を説明できるように職務記述書（Job Description）を整備します。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ベトナムでの滞在・就労ビザ -->
+                    <div class="side-card vietnam">
+                        <div class="side-card-title">
+                            <span>ベトナム現地での滞在・就労スキーム</span>
+                            <span style="font-size: 0.8rem; background-color: var(--accent-emerald); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px;">ベトナム法人所属</span>
+                        </div>
+                        <ul style="font-size: 0.85rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; line-height: 1.6;">
+                            <li><strong>在留ステータス</strong>：労働許可証（Work Permit） ＋ 労働TRC（一時滞在カード：最長2年更新可能）</li>
+                            <li><strong>職種（Job Title）</strong>：<strong>経営管理者（Manager）</strong>または<strong>事業開発スペシャリスト（Business Development Specialist）</strong>として申請</li>
+                            <li><strong>労働許可証免除の落とし穴回避</strong>：
+                                出資金300万円未満のDT4投資家ビザでは労働許可証の免除対象外（＝現地で業務を行うと不法就労リスク）となるため、出資をさせず「ベトナム法人との直接雇用契約」に基づいて労働許可証を取得します。これにより、ガバナンス（支配権）上のリスクを0にしつつ、最長2年の滞在権（TRC）を合法的に獲得します。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 実務手続きのステップ -->
+                <div style="background-color: var(--bg-slate); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-slate); font-size: 0.9rem; margin-top: 1.5rem;">
+                    <h4 style="font-weight:700; color:var(--text-dark); margin-bottom:0.75rem;">📋 ベトナム就労ビザ（LD＋労働TRC）取得のための実務ステップ</h4>
+                    <ol style="font-size: 0.85rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; line-height: 1.5; color: var(--text-light);">
+                        <li><strong>1. 職歴・学位の整合性確保</strong>：大卒資格の「専攻（学部）」と現地での「職務内容」の関連性を突かれないよう、申請用の職務記述書を事前に調整します。</li>
+                        <li><strong>2. 必要書類の公的認証（3段階）</strong>：日本の前勤務先からの「職歴証明書（3年以上）」や大学の「卒業証明書」を日本で公証役場 ➔ 外務省公印確認 ➔ 駐日ベトナム大使館での領事認証を取得。</li>
+                        <li><strong>3. 求人枠の申請・承認（現地）</strong>：現地の求人プラットフォームへ広告を掲載し、「ベトナム人で代替できない専門人材である」旨の事前雇用枠承認（約1ヶ月）を取得。</li>
+                        <li><strong>4. 無犯罪証明書・労働許可証の発行</strong>：日本で取得した無犯罪証明書と合わせて現地労働局へ申請し、Work Permit（労働許可証）および2年更新のTRC（滞在カード）を発行します。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
         <!-- ==================== 実行タイムライン ==================== -->
         <div id="timeline" class="tab-content">
             <div class="card">
@@ -1259,6 +1314,22 @@
                 document.getElementById('bar24').style.height = '100%';
             }, 300);
         });
+
+        // 継承役員候補タブへの直接遷移関数
+        function openSuccessorTab() {
+            // 全タブボタンからactiveをクリアし、継承役員候補ボタンをactiveにする
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            const succBtn = document.querySelector('[data-tab="successor"]');
+            if (succBtn) succBtn.classList.add('active');
+
+            // 全コンテンツからactiveをクリアし、successorコンテンツをactiveにする
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            const succContent = document.getElementById('successor');
+            if (succContent) succContent.classList.add('active');
+
+            // 表示位置をスクロール
+            window.scrollTo({ top: document.querySelector('.nav-container').offsetTop, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
